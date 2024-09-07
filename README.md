@@ -6,9 +6,10 @@ This project is an emotion-based movie recommendation system that uses facial ex
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Usage](#usage)
+- [Usage with GUI](#usage-with-gui)
+- [Usage without GUI](#usage-without-gui)
 - [Emotion-to-Genre Mapping](#emotion-to-genre-mapping)
-- [Contributing](#contributing)
+
 
 ### Features
 
@@ -57,11 +58,16 @@ This project is an emotion-based movie recommendation system that uses facial ex
 
 2. **Capture Emotion Using Webcam:**
    The system will use your webcam to capture images and detect emotions for 5 seconds. Ensure your face is clearly visible.
-![capturing images](https://github.com/Maniram294/Movie-recommendation-system-based-on-human-emotions/blob/master/Results/Detected_face-HAPPY.jpg)
+   <p align="center">
+   <img src="https://github.com/Maniram294/Movie-recommendation-system-based-on-human-emotions/blob/master/Results/Detected_face-HAPPY.jpg" alt="Capturing Images" width="500"/>
+   </p>
 
 3. **View Recommended Movies:**
    A GUI window will display the recommended movies based on the detected emotion. You can refresh the recommendations or close the window as needed.
-![capturing images](https://github.com/Maniram294/Movie-recommendation-system-based-on-human-emotions/blob/master/Results/Recommended_movies-HAPPY.jpg)
+   <p align="center">
+   <img src="https://github.com/Maniram294/Movie-recommendation-system-based-on-human-emotions/blob/master/Results/Recommended_movies-HAPPY.jpg" alt="Recommended Movies" width="500"/>
+   </p>
+
 
 4. **Emotion-to-Movie Recommendations:**
    Based on the most frequently detected emotion, the system will suggest relevant movies. The results are displayed in a separate window.
