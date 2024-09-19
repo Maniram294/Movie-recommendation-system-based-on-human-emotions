@@ -100,7 +100,7 @@ Feel free to customize this mapping in the code to better suit your preferences 
 ---
 
 ## References
-
-- **Movies Dataset**: This project uses the movies dataset from Kaggle. You can access the dataset and additional information here: [Movies Dataset](https://www.kaggle.com/code/ibtesama/getting-started-with-a-movie-recommendation-system#Credits,-Genres-and-Keywords-Based-Recommender)
+- **Emotions Detection**: This project uses the emotions dataset from Kaggle. You can access the dataset and additional information here: [Emotions Dataset](https://www.kaggle.com/code/shivambhardwaj0101/emotion-detection-fer-2013/)
+- **Movies Recommendation**: This project uses the movies dataset from Kaggle. You can access the dataset and additional information here: [Movies Dataset](https://www.kaggle.com/code/ibtesama/getting-started-with-a-movie-recommendation-system#Credits,-Genres-and-Keywords-Based-Recommender)
 
 ---
