@@ -1,0 +1,6 @@
+opencv-python<5
+pandas
+numpy
+tensorflow
+scikit-learn
+pillow

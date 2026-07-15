@@ -1,5 +1,6 @@
 import pandas as pd
 import random
+from ast import literal_eval
 
 # Define the emotion-to-genre mapping
 emotion_to_genre = {
@@ -41,7 +42,7 @@ def refresh_recommendations(emotion, num_recommendations):
 def load_data():
     try:
         # Load metadata with dtype and low_memory options
-        md = pd.read_csv('Movies/movies_metadata.csv', low_memory=False)
+        md = pd.read_csv('Movies_dataset/movies_metadata.csv', low_memory=False)
 
         # Display the first few rows to inspect data
         print("First few rows of metadata:")
@@ -54,7 +55,7 @@ def load_data():
         md['id'] = md['id'].astype('int')
 
         # Check for and handle non-integer values in 'id'
-        links_small = pd.read_csv('Movies/links_small.csv')
+        links_small = pd.read_csv('Movies_dataset/links_small.csv')
         links_small = links_small[links_small['tmdbId'].notnull()]['tmdbId'].astype('int')
 
         # Drop rows with specific IDs
@@ -63,10 +64,21 @@ def load_data():
         # Filter movies based on IDs in links_small
         smd = md[md['id'].isin(links_small)]
         print("smd : ",smd)
+        smd = smd.copy()
         # Fill missing values and create 'description'
         smd.loc[:, 'tagline'] = smd['tagline'].fillna('')
         smd.loc[:, 'description'] = smd['overview'].fillna('') + smd['tagline']
         smd.loc[:, 'description'] = smd['description'].fillna('')
+
+        # Parse genres as list of strings
+        def safe_literal_eval(val):
+            try:
+                return literal_eval(val)
+            except (ValueError, SyntaxError):
+                return []
+        
+        smd['genres'] = smd['genres'].fillna('[]').apply(safe_literal_eval)
+        smd['genres'] = smd['genres'].apply(lambda x: [i['name'] for i in x] if isinstance(x, list) else [])
 
         return smd
     except Exception as e:
